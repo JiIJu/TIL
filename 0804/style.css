@@ -1,0 +1,50 @@
+.button {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.button1 {
+    background-color: green;
+    color: #d7fff1;
+}
+
+.rec {padding: 15px;
+    border-radius: 10px;
+    background-color: crimson;
+    text-align : center;
+    align-items: center;
+    }
+
+.login-form {
+border: 2px solid lightgray;
+border-radius: 10px;
+margin: auto;
+padding: 100px;
+
+}
+
+.textfield {
+    font-size:14px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+
+}
+span {
+    font-size:1.5em;
+    font-weight:bold;
+display: table-cell;
+padding: 5px;
+vertical-align: middle;
+}
+.cnt {
+    text-align: center;
+    font-size:1.5em;
+    font-weight:bold;
+}
