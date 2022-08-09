@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    /* 자손 결합자 */
+div p {
+    color: blue;
+}
+
+/* 자식 결합자 */
+div > p {
+    color: crimson;
+}
+
+/* 
+자손결합자와 자식 결합자의 차이
+자손 결합자는 밑의 모든 자손들을 포함해서 변환하지만 자식 결합자는 바로 밑의 자손만 변환시킨다. 
+*/
+
+
+</style>
+
+</head>
+<body>
+    
+<div>
+    <h1>ㅎㅇ
+        <p>ㅎㅇ
+            <div>
+                <p>하이</p>
+            </div>
+        </p>
+    </h1>
+    
+</div>
+
+
+</body>
+</html>

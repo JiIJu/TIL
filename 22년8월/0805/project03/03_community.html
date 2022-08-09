@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <link rel="stylesheet" href="03_community.css">
+  <title>Community</title>
+</head>
+<body>
+  <!-- 01_nav_footer에서 작성한 Navigation bar & Modal & Footer 코드를 적절한 위치에 사용합니다. -->
+  <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/project03/02_home.html">
+          <img src="/project03/images/logo.png" alt="" width="100px" height="40px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/project03/02_home.html" style="color:gray">Home</a>
+          <a class="nav-link" href="/project03/03_community.html" style="color:white">Comunity</a>
+          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" style="color:gray">Login</button>
+          
+      
+      
+        </div>
+    </div>
+  </nav>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Email address:</label>
+              <input type="text" class="form-control" id="recipient-name">
+              <a>we'll never share your email with anyone else</a>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">password:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Check me Out
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 03_community.html -->
+  <main class="container row" style="position:relative;top:65px;">
+    <h1>Community</h1>
+    <!-- Aside - 게시판 목록 -->
+    
+    <aside class="col-12 col-lg-2 ">
+      <ul class="list-group">
+        <a href="#" class="list-group-item  text-primary" >Boxoffice</a>
+        <a href="#" class="list-group-item  text-primary">Movies</a>
+        <a href="#" class="list-group-item  text-primary">Genres</a>
+        <a href="#" class="list-group-item  text-primary">Actors</a>
+      </ul>
+    
+      <!-- <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">Boxoffice</a>
+        <a href="#" class="list-group-item list-group-item-action">Movies</a>
+        <a href="#" class="list-group-item list-group-item-action">Genres</a>
+        <a href="#" class="list-group-item list-group-item-action">Actors</a>
+      </div> -->
+    </aside>
+
+    <!-- Section - 게시판 -->
+    <section class="col-10">
+      <div class="table-responsive-lg d-md-none d-lg-block">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr class="bg-dark" style="color:white">
+              <th scope="col">영화제목</th>
+              <th scope="col">글 제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">작성시간</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td>Best Movie Ever</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td>Movie Test</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+            <tr>
+              <th scope="row">Great Movie title</th>
+              <td>Movie Test</td>
+              <td>user</td>
+              <td>1 minute ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      </div>
+      <div>
+        <article></article>
+      </div> 
+    </section>
+    <ul class="list-group py-3 px-3 none list-group-flush">
+      <li class="list-group-item"><a style="font-size: 35px;">Best Movie Ever</a><br>
+      <a style="font-size: 30px;">Great Movie Title</a><br>
+      <a>user</a><br><br>
+      <a>1 minute ago</a></li>
+   <li class="list-group-item"><a style="font-size: 35px;">Movie Test</a><br>
+      <a style="font-size: 30px;">Great Movie Title</a><br>
+      <a>user</a><br><br>
+      <a>1 minute ago</a></li>
+    <li class="list-group-item"><a style="font-size: 35px;">Movie Test</a><br>
+      <a style="font-size: 30px;">Great Movie Title</a><br>
+      <a>user</a><br><br>
+      <a>1 minute ago</a></li>
+    </ul>
+
+    <div class="py-3" style="position:relative ; left:45%;">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </main>
+  
+  <footer>
+  
+    <div style="position:fixed ; bottom:0px; left:40%;">
+      <a class="nav-link" href="#" style="color:gray">Web-bootstrap PJT. by</a>
+    </div>
+    </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
