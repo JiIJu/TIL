@@ -23,18 +23,10 @@ for tc in range(1,T+1):
     num = era(N)
     a = len(num)
     count=0
-    data =[]
-    emp = []
     for i in range(a):
-        for j in range(a):
-            for k in range(a):
+        for j in range(i,a):
+            for k in range(j,a):
                 if num[i]+num[j]+num[k]==N:
                     count +=1
-                    data += [i,j,k]
-    v = ''
-    for i in range(len(data)):
-        emp[i] += data[i:i+2]
-    print(data)
-    print(count)
-    print(emp)
-    # print(f'#{tc} {count}')
+
+    print(f'#{tc} {count}')
