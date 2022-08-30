@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{pick}}은 {{pick|length}} 글자</h1>
+    <h1>{{foods|join:','}}</h1>
+    <p>메뉴판</p>
+    <ul>
+        {% for food in foods%}
+        <li>{{food}}</li>
+        {% endfor %}
+    </ul>
+
+    {% if pick in foods %}
+    <h1>{{pick}}이 있다</h1>
+    {% else %}
+    <h1>{{pick}}이 없다.</h1>
+    {% endif %}
+
+    <a href='{%url 'index'%}'> 뒤로 </a>
+    {#주석이에용#}
+    {% comment "" %}
+    <p>이거도 주석</p>
+    <h1>여러줄이 된다고</h1>
+    {% endcomment %}
+
+    
+</body>
+</html>
