@@ -1,0 +1,25 @@
+가상환경 설정
+python -m venv ./venv 
+source venv/Scripts/activate
+
+install파일들 다운로드
+pip install -r requirements.txt
+
+파일 다운받아서 실행
+python manage.py migrate --run-syncdb
+
+장고설치
+pip install django==3.2.13
+프로젝트생성
+django-admin startproject firstpjt .
+서버싱행
+python manage.py runserver
+
+앱 생성
+python manage.py startapp articles
+앱생성후 setting에 앱 등록
+
+pip install ipython
+pip install django-extensions
+setting에 django_extensions추가
+pip freeze > requirements.txt
