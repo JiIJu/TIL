@@ -1,0 +1,9 @@
+가상환경
+requirement
+urlpatterns에  경로추가
+settings에 추가
+models수정후 migrate ( foreignkey에는 settings.AUTH_USER_MODEL)
+어플에 forms폴더 추가 후 form추가
+urls파일작성
+view작성
+html작성
