@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<b><h1>INDEX</h1></b>
+<hr>
+{% for q in questions %}
+<p>{{q.pk}}번 이슈</p>
+<b><h2>{{q.title}}</h2></b><br>
+<a href="{%url 'eithers:detail' q.pk%}">DETAIL</a>
+<hr>
+
+{% endfor %}
+
+
+{% endblock content %}
