@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ person.username }}님의 프로필</h1>
+  <div>
+    팔로워 :
+    <span id="followers-count">{{ person.followers.all|length }}</span>
+    / 팔로잉 :
+    <span id="followings-count">{{ person.followings.all|length }}</span>
+
+  </div>
+
+  {% if request.user != person %}
+    <div>
+      <form id="follow-form" data-user-id="{{ person.pk }}">
+        {% csrf_token %}
+        {% if request.user in person.followers.all %}
+          <input type="submit" value="언팔로우">
+        {% else %}
+          <input type="submit" value="팔로우">
+        {% endif %}
+      </form>
+      <div>
+      {% endif %}
+
+      <h2>{{ person.username }}이 작성한 모든 게시글</h2>
+      {% for article in person.article_set.all %}
+        <div>{{ article.title }}</div>
+      {% endfor %}
+
+      <hr>
+
+      <h2>{{ person.username }}이 작성한 모든 댓글</h2>
+      {% for comment in person.comment_set.all %}
+        <div>{{ comment.content }}</div>
+      {% endfor %}
+
+      <hr>
+
+      <h2>{{ person.username }}이 좋아요 한 모든 게시글</h2>
+      {% for article in person.like_articles.all %}
+        <div>{{ article.title }}</div>
+      {% endfor %}
+
+      <a href="{% url 'articles:index' %}">back</a>
+
+    {% endblock content %}
+
+    {% block scripts %}
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script>
+        const form1 = document.querySelector("#follow-form")
+        form1.addEventListener("submit", function (event) {
+          // submit 이벤트의 기본 동작 방지
+          event.preventDefault()
+          // form 태그의 data-user-id 속성값 가져오기
+          const userId = event.target.dataset.userId
+          // 장고는 csrf토큰이 없으면 post 요청을 받지 않기 때문에
+          // input type=hidden 태그의 값을 가져와서 사용한다.
+          const token = document
+            .querySelector("[name=csrfmiddlewaretoken]")
+            .value
+            axios({
+              method: "post", url: `/accounts/${userId}/follow/`,
+              // 헤더 정보에 csrf 토큰 정보 포함 시키기
+              // 키 이름은 반드시 지킬것!
+              headers: {
+                "X-CSRFToken": token
+              }
+            })
+            .then((response) => {
+              const isFollowed = response.data.is_followed
+              const followBtn = document.querySelector("#follow-form > input[type=submit]")
+              if (isFollowed) {
+                followBtn.value = "언팔로우"
+              } else {
+                followBtn.value = "팔로우"
+              }
+              const followers = document.querySelector("#followers-count")
+              const followings = document.querySelector("#followings-count")
+              followers.innerText = response.data.followers_count
+              followings.innerText = response.data.followings_count
+            })
+        })
+      </script>
+    {% endblock scripts %}
