@@ -1,0 +1,13 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<h1>만나서 반가워요</h1>
+<h3>반갑습니다</h3>
+<h5>반갑다</h5>
+<h6>반갑</h6>
+<button type='button' class='btn btn-primary'>primary</button>
+<a href='{%url 'articles:greeting'%}' type='button' class='btn btn-danger'> greeting </a>
+<a href='{%url 'articles:dinner'%}'> dinner</a>
+<a href={% url "articles:hello" name='지이주'%}>홈으로</a>
+<a href={%url 'pages:index'%}> 두번째 앱의 인덱스로 이동 </a>
+{% endblock content %}
