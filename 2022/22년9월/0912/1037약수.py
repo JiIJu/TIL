@@ -1,5 +1,0 @@
-N = int(input())
-data = list(map(int,input().split()))
-a = max(data)
-b = min(data)
-print(a*b)
