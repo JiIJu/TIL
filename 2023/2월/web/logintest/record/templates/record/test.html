@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div id='goodbad' style="height:5000px;">
+<h1>테스트 페이지</h1>
+<h1>{{check}}</h1>
+</div>
+{% endblock contents %}
+
+{% block scripts %}
+
+<script>
+  function autoRefresh_div()
+  {
+    $("#goodbad").load(location.href + "#goodbad");
+  }
+  autoRefresh_div()
+  console.log(1)
+</script>
+
+<style>
+test {
+  height: 500px;
+}
+</style>
+
+
+{% endblock scripts %}
+

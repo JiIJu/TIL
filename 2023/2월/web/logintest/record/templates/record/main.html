@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block contents %}
+<main>
+<h1>main</h1>
+<p>
+    <a href="{%url 'record:create'%}">기록하기</a><br />
+    <a href="{%url 'record:deepcreate'%}">자동기록</a><br />
+    <a href="{%url 'record:test'%}">테스트페이지</a><br />
+</p>
+</main>
+
+<style>
+    main {
+        height : 70vh;
+    }
+</style>
+{% endblock contents %}
+
+

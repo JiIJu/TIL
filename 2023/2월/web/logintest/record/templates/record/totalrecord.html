@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block contents %}
+<h1>Records</h1>
+<a href="{% url 'record:main'%}">[main]</a>
+<hr />
+
+{% for record in records %} {% if record.user.username == user.username %}
+<p>번호 : {{ record.pk }}</p>
+<p>유저 : {{record.user.username}}</p>
+<p>운동 종류 : {{ record.exercise }}</p>
+<p>반복 횟수 : {{ record.count }}</p>
+<p>운동 시간: {{ record.time }}</p>
+<p>운동 날짜 : {{ record.date }}</p>
+<p>점수</p>
+<p>perfect : {{ record.perfect }}</p>
+<p>good : {{ record.good }}</p>
+<p>bad: {{ record.bad }}</p>
+
+<a href="{% url 'record:delete' record.pk %}">기록삭제</a>
+
+<hr />
+{% endif %} {% endfor %} {% endblock %}

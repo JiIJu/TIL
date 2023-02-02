@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load socialaccount %} 
+{% load i18n %} 
+{% load static %}
+{% block contents %}
+<h1>인덱스 페이지</h1>
+<a href="{% url 'record:home' %}">[home]</a>
+<a href="{% url 'record:chart' %}">[chart]</a>
+<a href="{% url 'record:live' %}">[live]</a>
+<a href="{% url 'record:main' %}">[main]</a>
+
+<a href="{% url 'account_login' %}">[login]</a>
+<a href="{% url 'account_logout' %}">[logout]</a>
+<a href="{% url 'account_signup' %}">[signup]</a>
+<a href="{% url 'account_inactive' %}">[inactive]</a>
+<a href="{% url 'account_email' %}">[email]</a>
+
+<img src="{% static 'record/img/kakao_login.png' %}" />
+<img src="{% static '1.jpg' %}" />
+
+
+{% endblock contents %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block contents %}
+
+<h1>live</h1>
+<h3>Camera Live</h3>
+<!-- Your Connection -->
+{% comment %} <img
+  style="-webkit-user-select: none"
+  src="{% url 'record:stream2' %}"
+  width="640"
+  height="480"
+/> {% endcomment %}
+<div>{{ans}}</div>
+<div id="goodbad">
+  <h4>good : {{good}}</h4>
+  <h4>bad : {{bad}}</h4>
+</div>
+
+{% endblock contents %} 
